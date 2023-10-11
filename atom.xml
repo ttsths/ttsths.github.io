@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Simon&#39;s wooden house</title>
+  
+  <subtitle>peace and love</subtitle>
+  <link href="https://ttsths.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://ttsths.github.io/"/>
+  <updated>2023-10-11T09:00:00.000Z</updated>
+  <id>https://ttsths.github.io/</id>
+  
+  <author>
+    <name>Simon Shentu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>about</title>
+    <link href="https://ttsths.github.io/about/"/>
+    <id>https://ttsths.github.io/about/</id>
+    <published>2023-10-11T00:00:00.000Z</published>
+    <updated>2023-10-11T09:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title: about&lt;br&gt;date: 2016-09-11 14:33:14&lt;br&gt;urlname: about&lt;br&gt;tags:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;about&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Hey-There&quot;&gt;&lt;a href=&quot;#Hey-There&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客最优实践</title>
+    <link href="https://ttsths.github.io/hexo-blog-CI/"/>
+    <id>https://ttsths.github.io/hexo-blog-CI/</id>
+    <published>2023-09-28T08:49:00.000Z</published>
+    <updated>2023-10-11T08:47:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用 Notion 记录文章，markdown 格式&lt;/p&gt;
+&lt;p&gt;github action 自动同步 notion 文章，并推送 Telegram&lt;/p&gt;
+&lt;p&gt;本地使用&lt;/p&gt;
+&lt;p&gt;使用 hexo 搭建静态&lt;/p&gt;
+&lt;p&gt;hexo 极简主题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="blog" scheme="https://ttsths.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>21年初后端社招面试经历</title>
+    <link href="https://ttsths.github.io/interview-2021/"/>
+    <id>https://ttsths.github.io/interview-2021/</id>
+    <published>2023-09-28T08:49:00.000Z</published>
+    <updated>2023-10-11T08:47:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="interview" scheme="https://ttsths.github.io/tags/interview/"/>
+    
+  </entry>
+  
+</feed>

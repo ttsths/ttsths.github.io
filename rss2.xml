@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Simon&#39;s wooden house</title>
+    <link>https://ttsths.github.io/</link>
+    
+    <atom:link href="https://ttsths.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Wed, 11 Oct 2023 09:00:00 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>about</title>
+      <link>https://ttsths.github.io/about/</link>
+      <guid>https://ttsths.github.io/about/</guid>
+      <pubDate>Wed, 11 Oct 2023 00:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;title: about&lt;br&gt;date: 2016-09-11 14:33:14&lt;br&gt;urlname: about&lt;br&gt;tags:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;about&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Hey-There&quot;&gt;&lt;a href=&quot;#Hey-There&quot;</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://ttsths.github.io/about/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>个人博客最优实践</title>
+      <link>https://ttsths.github.io/hexo-blog-CI/</link>
+      <guid>https://ttsths.github.io/hexo-blog-CI/</guid>
+      <pubDate>Thu, 28 Sep 2023 08:49:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;使用 Notion 记录文章，markdown 格式&lt;/p&gt;
+&lt;p&gt;github action 自动同步 notion 文章，并推送 Telegram&lt;/p&gt;
+&lt;p&gt;本地使用&lt;/p&gt;
+&lt;p&gt;使用 hexo 搭建静态&lt;/p&gt;
+&lt;p&gt;hexo 极简主题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://ttsths.github.io/tags/blog/">blog</category>
+      
+      
+      <comments>https://ttsths.github.io/hexo-blog-CI/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>21年初后端社招面试经历</title>
+      <link>https://ttsths.github.io/interview-2021/</link>
+      <guid>https://ttsths.github.io/interview-2021/</guid>
+      <pubDate>Thu, 28 Sep 2023 08:49:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://ttsths.github.io/tags/interview/">interview</category>
+      
+      
+      <comments>https://ttsths.github.io/interview-2021/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>

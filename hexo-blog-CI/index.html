@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>个人博客最优实践</title>
+<meta name="keywords" content="个人博客最优实践, Simon&#39;s wooden house">
+<meta name="description" content="使用 Notion 记录文章，markdown 格式
+github action 自动同步 notion 文章，并推送 Telegram
+本地使用
+使用 hexo 搭建静态
+hexo 极简主题
+
+hexo-theme-minimalism
+">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="个人博客最优实践">
+<meta property="og:description" content="使用 Notion 记录文章，markdown 格式
+github action 自动同步 notion 文章，并推送 Telegram
+本地使用
+使用 hexo 搭建静态
+hexo 极简主题
+
+hexo-theme-minimalism
+">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Simon's wooden house" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Simon's wooden house" type="application/rss+xml">
+</head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://ttsths.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://ttsths.github.io">
+        <h1 class="site-title">Simon&#39;s wooden house</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">个人博客最优实践</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-09-28</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/blog/">
+              blog
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <p>使用 Notion 记录文章，markdown 格式</p>
+<p>github action 自动同步 notion 文章，并推送 Telegram</p>
+<p>本地使用</p>
+<p>使用 hexo 搭建静态</p>
+<p>hexo 极简主题</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/f-dong/hexo-theme-minimalism">hexo-theme-minimalism</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">hexo-theme-organes</a></li>
+</ul>
+<p>基于<a target="_blank" rel="noopener" href="https://cloud.mongodb.com/v2/65263a9d000bc537a98a13b8#/clusters/connect?clusterId=Cluster0">MongoDB</a>和<a target="_blank" rel="noopener" href="https://vercel.com/ttsths/hexo-twikoo/Ct1KjskocSG3AC2K3sY4L7BSaJPm">verche</a>的的<a target="_blank" rel="noopener" href="https://twikoo.js.org/backend.html#vercel-%E9%83%A8%E7%BD%B2">twikoo</a>评论系统(白嫖</p>
+<p><a href="mailto:sin2%3Dcos2%3D1@cluster0.irspyaq.mongodb.net">mongoDB URL</a></p>
+<p>verche app: <a target="_blank" rel="noopener" href="https://vercel.com/ttsths/hexo-twikoo/Ct1KjskocSG3AC2K3sY4L7BSaJPm">https://vercel.com/ttsths/hexo-twikoo/Ct1KjskocSG3AC2K3sY4L7BSaJPm</a></p>
+<h2 id="elog"><a href="#elog" class="headerlink" title="elog"></a>elog</h2><p><a href="%5Bhttps://elog.1874.cool/notion/start%5D(https://elog.1874.cool/notion/start)">Elog</a>基于 Node，用于将 Notion 作为数据库将 blog 部署到 github page 并在多端同步</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elog clean</span><br><span class="line">elog <span class="built_in">sync</span> -e .elog.env</span><br></pre></td></tr></table></figure>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#elog"><span class="top-box-text">elog</span></a></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/interview-2021/">
+          <h3 class="post-title">
+            下一篇：21年初后端社招面试经历
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+    <div id="gitalk-container"></div>
+
+
+
+
+
+
+<script>
+    (function () {
+        const jq = document.createElement('script');
+        jq.src = "/js/twikoo.min.js";
+        document.getElementsByTagName('body')[0].appendChild(jq);
+
+        const config = {"envId":"https://hexo-twikoo-ttsths.vercel.app","region":null,"mark":null};
+        jq.onload = function () {
+            twikoo.init({
+                envId: config.envId,
+                el: '#gitalk-container',
+                region: config.region,
+                path: location.pathname + (config.mark ? '?mark=' + config.mark : ''),
+                lang: config.language,
+            });
+        }
+    })()
+</script>
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/ttsths" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
