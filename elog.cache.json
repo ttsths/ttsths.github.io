@@ -1,0 +1,224 @@
+{
+  "docs": [
+    {
+      "id": "3ab1cb5b-97ff-4af6-88dd-52ba6f6638fc",
+      "doc_id": "3ab1cb5b-97ff-4af6-88dd-52ba6f6638fc",
+      "title": "3ab1cb5b-97ff-4af6-88dd-52ba6f6638fc",
+      "updated": 1697014020000,
+      "body_original": "\n使用Notion记录文章，markdown格式\n\n\ngithub action自动同步notion文章，并推送Telegram\n\n\n本地使用\n\n\n使用hexo搭建静态\n\n\nhexo 极简主题\n\n- [hexo-theme-minimalism](https://github.com/f-dong/hexo-theme-minimalism)\n- [hexo-theme-organes](https://github.com/zchengsite/hexo-theme-oranges)\n\n基于[MongoDB](https://cloud.mongodb.com/v2/65263a9d000bc537a98a13b8#/clusters/connect?clusterId=Cluster0)和[verche](https://vercel.com/ttsths/hexo-twikoo/Ct1KjskocSG3AC2K3sY4L7BSaJPm)的的[twikoo](https://twikoo.js.org/backend.html#vercel-%E9%83%A8%E7%BD%B2)评论系统(白嫖\n\n\n[mongoDB URL](mailto:sin2%3Dcos2%3D1@cluster0.irspyaq.mongodb.net)\n\n\nverche app: [https://vercel.com/ttsths/hexo-twikoo/Ct1KjskocSG3AC2K3sY4L7BSaJPm](https://vercel.com/ttsths/hexo-twikoo/Ct1KjskocSG3AC2K3sY4L7BSaJPm)\n\n\n## elog\n\n\n[Elog]([https://elog.1874.cool/notion/start](https://elog.1874.cool/notion/start))基于Node，用于将Notion作为数据库将blog部署到github page并在多端同步\n\n\n```bash\nelog clean \nelog sync -e .elog.env\n```\n\n",
+      "properties": {
+        "cover": "",
+        "category": "",
+        "tags": [
+          "blog"
+        ],
+        "status": "已发布",
+        "date": "2023-09-28 16:49:00",
+        "catalog": [
+          "blog"
+        ],
+        "urlname": "hexo-blog-CI",
+        "title": "个人博客最优实践",
+        "summary": "",
+        "sort": "",
+        "updated": "2023-10-11 16:47:00"
+      },
+      "catalog": [
+        {
+          "title": "blog",
+          "doc_id": "3ab1cb5b-97ff-4af6-88dd-52ba6f6638fc"
+        }
+      ],
+      "body": "",
+      "realName": "hexo-blog-CI",
+      "relativePath": "/hexo-blog-CI.md"
+    },
+    {
+      "id": "bf727c3c-4c8b-4f90-a555-7171e5aad682",
+      "doc_id": "bf727c3c-4c8b-4f90-a555-7171e5aad682",
+      "title": "bf727c3c-4c8b-4f90-a555-7171e5aad682",
+      "updated": 1697014800000,
+      "body_original": "\n---\ntitle: about\ndate: 2016-09-11 14:33:14\nurlname: about\ntags:\n- about\n---\n\n\n## Hey There!\nI'm Simon Shentu ,I’m an experienced full stack web developer and technical writer with a demonstrated history of working in the information technology and services industry.\n\n## Let's connect and chat!\n- [github](https://github.com/ttsths)\n- [Gmail](mailto:shentuhaisan@gmail.com)\n\n",
+      "properties": {
+        "cover": "",
+        "category": "",
+        "tags": [],
+        "status": "已发布",
+        "date": "2023-10-11",
+        "catalog": [
+          "about"
+        ],
+        "urlname": "about",
+        "title": "about",
+        "summary": "",
+        "sort": 1,
+        "updated": "2023-10-11 17:00:00"
+      },
+      "catalog": [
+        {
+          "title": "about",
+          "doc_id": "bf727c3c-4c8b-4f90-a555-7171e5aad682"
+        }
+      ],
+      "body": "",
+      "realName": "about",
+      "relativePath": "/about.md"
+    },
+    {
+      "id": "506a13fb-16d4-4473-bd91-30fc21fe1608",
+      "doc_id": "506a13fb-16d4-4473-bd91-30fc21fe1608",
+      "title": "506a13fb-16d4-4473-bd91-30fc21fe1608",
+      "updated": 1697014020000,
+      "body_original": "- [**背景**](https://www.notion.so/samhalii/55559b9aa5d84e9b9fff82a01b581b51?v=cbbd193f3f054488b1b09b07f5770e13&p=506a13fb16d44473bd9130fc21fe1608&pm=s#%E8%83%8C%E6%99%AF)\n- [**准备**](https://www.notion.so/samhalii/55559b9aa5d84e9b9fff82a01b581b51?v=cbbd193f3f054488b1b09b07f5770e13&p=506a13fb16d44473bd9130fc21fe1608&pm=s#%E5%87%86%E5%A4%87)\n- [**面试汇总**](https://www.notion.so/samhalii/55559b9aa5d84e9b9fff82a01b581b51?v=cbbd193f3f054488b1b09b07f5770e13&p=506a13fb16d44473bd9130fc21fe1608&pm=s#%E9%9D%A2%E8%AF%95%E6%B1%87%E6%80%BB)\n- [**总结**](https://www.notion.so/samhalii/55559b9aa5d84e9b9fff82a01b581b51?v=cbbd193f3f054488b1b09b07f5770e13&p=506a13fb16d44473bd9130fc21fe1608&pm=s#%E6%80%BB%E7%BB%93)\n\n\t## **背景**\n\n\n\t双非本科，计科专业的五年弱鸡。base:SH，在老东家-EM，待了两年多。迫于上海从20年底的房价飞涨，思考对比之后决定回HZ发展，看看外面的机会。毕业这么多年还没有在大厂待过，所以进大厂一直是自己的一个目标。结合自身的情况，给自己制定了一份面试计划，大概分为以下阶段：\n\n\t- 知识体系总结回顾\n\t- 定位目标:个人在工程和架构上的优势？软技能方便的长处？想找什么样的工作去什么样的团队\n\t- 内推面试：感谢v2及帮我内推的大佬\n\t- 面试复盘\n\n\t## **准备**\n\n\n\t知识体系总结其实是个日积月累的，但是我比较懒，之前都是零散的学习。没有很体系的记录和总结，所以在复习的时候也花了不少时间。有了知识体系之后给自己制定了一个复习计划-1个月，但是计划赶不上变化-_-||。大体方向上分为以下几个部分：\n\n\t- Java基础&JUC&JVM\n\t- 过往项目经历\n\t- 中间件及系统设计\n\t- 操作系统&计算机网络\n\t- 算法\n\n\t### **准备简历**\n\n\n\t简历我用的[**wondercv**](https://www.wondercv.com/)在线简历网站写的，用的免费的Markdown模板（非广告）。重要的是对自己简历上的东西要烂熟于心，熟练的技术栈，项目设计，为什么这么设计，项目的亮点、难点。\n\n\n\t## **面试汇总**\n\n\n\t我总结了下出现比较频繁的面试题\n\n\n\t### **Java基础&JUC**\n\n\t- 面向对象的设计原则\n\t- HashMap的数据结构和`put()`方法的过程\n\t- 强引用、软引用、弱引用、虚引用？\n\t\t- JDK中哪些使用到了虚引用\n\t- ConcurrentHashMap下1.7和1.8的区别\n\t\t- `put()`方法的插入过程\n\t\t- `get()`方法为什么不加锁也是线程安全的\n\t- 线程池的参数&任务执行过程-**【高频必问】**\n\t\t- 线程数如何设置？队列如何选择？\n\t\t- 线程处理任务时抛异常后线程池如何处理\n\t\t- `Tomcat`的默认线程池为什么是200\n\t- `Synchronized`和`ReentrantLock`的原理及区别\n\t\t- AQS的实现，扩展类\n\t\t- `Synchronized`锁优化\n\t- `volatile`的作用及原理\n\t\t- 内存屏障在编译和运行时如何使用\n\t\t- 总线风暴了解吗\n\t- `ThreadLocal`的原理、实际的使用场景\n\t- JDK中常见的设计模式\n\t- JVMTI\\JDPA\n\n\t### **Java虚拟机**\n\n\t- 内存模型\n\t- 类加载机制\n\t\t- 如何破坏双亲委派机制\n\t\t\t- Spi jdbc\n\t\t\t- 如何自定义加载器\n\t\t- new Object的过程\n\t- 方法调用过程，栈是如何创建的\n\t- 常见的垃圾回收算法和垃圾回收器\n\t\t- CMS和G1的使用和调优实践\n\t- 分代假说\n\t- 线上OOM排查思路\n\t- 内存泄漏\n\n\t### **数据库**\n\n\t- MySQL的索引结构以及使用\n\t- 事务的隔离级别和常见问题\n\t\t- 脏读与幻读的区别\n\t\t- 大事务如何处理？子事务之间如何保证一致性\n\t- 锁\n\t\t- next key lock ,gap 行锁，表锁\n\t- SQL优化的过程\n\t- update的执行过程（走索引&不走索引）\n\t\t- 普通索引\n\t\t\t- gap锁or next-key lock\n\t\t- 聚簇索引\n\t\t- 无索引\n\t\t\t- 表记录和间隙全部锁\n\t- MongoDB的优劣\n\n\t### **中间件**\n\n\n\t### **Redis**\n\n\t- 单线程的Redis为什么快\n\t- 常见的数据结构及使用到的场景\n\t- IO多路复用在Redis中是如何实现\n\t- 持久化机制有哪些，底层原理\n\t- 淘汰机制有哪些？\n\t\t- LRU如何实现\n\t- 分布式锁的实现？锁过期？\n\t\t- Redison&RedLock\n\t- 哨兵模式和集群模式的区别？\n\t\t- Raft算法的过程\n\t\t- 集群模式下节点的新增和移除过程\n\t- BigKey和HotKey如何处理\n\t- 缓存一致性的解决方案\n\t- 高级的数据结构\n\t\t- bloomfilter\n\n\t### **分库分表**\n\n\t- Sharding-JDBC的执行过程\n\t- Sharding-JDBC不支持的语法\n\t- 如何解决不走分片键的复制查询\n\t- 数据倾斜如何设计一个移动数据最少的方案\n\n\t### **MQ**\n\n\t- 如何保证消息的可靠性\n\t- 如何保证消息的顺序性\n\t- 如何处理消息堆积\n\t- RocketMQ&Kafka&ActiveMQ的区别\n\t- RocketMQ是如何设计\n\t\t- 延迟消息如何设计\n\t\t- 死信队列\n\t\t- 消息重投\n\t- 生产者和消费者的负载均衡策略有哪些\n\n\t### **框架**\n\n\t- Spring\n\t\t- IOC\n\t\t\t- Autowired和 Resource的区别\n\t\t- AOP\n\n\t\t\tSpring如何实现一个自定义扩展点\n\n\t\t\t- cglib\n\t\t\t- Jdk动态代理\n\t\t\t- 实例化之前AutoConfigruation BeanPostProcessor；实例化之后，判断是要需要增强，增强的话需要设置代理\n\t\t- 如何解决循环依赖\n\t\t\t- 三级缓存，最后一集缓存的factoryBean 先实例化，在初始化\n\t\t- 事务如何实现，如何开启和关闭，传播机制\n\t\t\t- 传播机制的实现：安全点\n\t\t- SpringMVC响应请求的步骤\n\t\t- Controller是线程安全的吗\n\n\t### **分布式**\n\n\t- SpringBoot的配置装配\n\t- Hystrix实现的原理\n\t\t- 如何实现一个滑动窗口\n\t- Apollo的配置热部署如何实现\n\t- Eureka是如何在高并发下的可靠性\n\t\t- 自我保护机制的原理\n\t\t- CAP\n\t- SkyWalking如何实现链路追踪\n\t\t- 如何实现日志追踪\n\t\t\t- 服务调用传递\n\t\t\t- 父子线程的传递\n\t\t\t- 线程池之间的传递\n\n\t### **系统设计**\n\n\t- 100个日志文件（10M~1000G之间）找出指定日期的日志并排序\n\t- 卡券系统设计\n\t- 秒杀系统的设计\n\t- 12306抢票设计\n\t- 大数据量的评论系统如何设计\n\t- 红包雨设计--总共发1亿，假设1000w，每个人最多拿15块，不能超卖，点点点，是有概率的，汇总\n\t\t- Redis主从，主节点宕机\n\n\t### **计算机网络**\n\n\t- TCP 和 UDP 有什么区别?\n\n\t\tUDP 流媒体应用\n\n\t\t- 拥塞控制、滑动窗口\n\t\t\t- 2msl\n\t\t- 怎么实现UDP实现可靠传输\n\t- TCP的粘包问题如何解决\n\t- IO模型，IO多路复用的差异\n\t- http 和 resultFul 接口的区别 rpc的区别\n\t\t- resultFul 是一种规范\n\t\t- rpc有自己的序列化，协议，响应快\n\n\t### **算法**\n\n\t- 数据结构\n\t- [**有序数组排序-LeetCode88**](https://leetcode-cn.com/problems/merge-sorted-array/)\n\t- [**无重复字符的最长子串-LeetCode-3**](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)\n\t- [**排序链表-LeetCode148**](https://leetcode-cn.com/problems/sort-list/)\n\t- [**翻转字符串里的单词**](https://leetcode-cn.com/problems/reverse-words-in-a-string/)\n\t- [**较小的三数之和-LeetCode259**](https://leetcode-cn.com/problems/3sum-smaller/)\n\t- 二叉树后续遍历\n\n\t### **软技能**\n\n\t- 你的优点和缺点\n\t\t- 举例说明优点\n\t- 过往经历给你带来影响最深的成长是什么\n\t- 未来3年的职业规划\n\n\t## **总结**\n\n\n\t面了近20家公司，有好多不尽人意的地方，最后能够拿到offer还是很幸运的。补充一些小结：\n\n\t- 简历里的项目一定要好好准备\n\t- 如果想进大厂，算法还是要好好刷一刷\n\t\t- 《[**编程珠玑**](https://book.douban.com/subject/3227098/)》\n\t\t- 《[**剑指offer**](https://book.douban.com/subject/27008702/)》\n\t\t- [**CodeTop**](https://codetop.cc/#/home)\n\t\t- 平时一定要多思考和总结，不积跬步无以至千里\n\n\t\t到这里就全写完了, 你可以直接通过我的邮箱留言交流, 感谢您耐心地看完全文!\n\n",
+      "properties": {
+        "cover": "",
+        "category": "",
+        "tags": [
+          "interview"
+        ],
+        "status": "已发布",
+        "date": "2023-09-28 16:49:00",
+        "catalog": [
+          "面试"
+        ],
+        "urlname": "interview-2021",
+        "title": "21年初后端社招面试经历",
+        "summary": "",
+        "sort": "",
+        "updated": "2023-10-11 16:47:00"
+      },
+      "catalog": [
+        {
+          "title": "面试",
+          "doc_id": "506a13fb-16d4-4473-bd91-30fc21fe1608"
+        }
+      ],
+      "body": "",
+      "realName": "interview-2021",
+      "relativePath": "/interview-2021.md"
+    }
+  ],
+  "catalog": [
+    {
+      "object": "page",
+      "id": "506a13fb-16d4-4473-bd91-30fc21fe1608",
+      "created_time": "2023-09-28T08:49:00.000Z",
+      "last_edited_time": "2023-10-11T08:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd4ce43f-629c-41b9-b09a-a603a1dc8301"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd4ce43f-629c-41b9-b09a-a603a1dc8301"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "55559b9a-a5d8-4e9b-9fff-82a01b581b51"
+      },
+      "archived": false,
+      "properties": {
+        "cover": "",
+        "category": "",
+        "tags": [
+          "interview"
+        ],
+        "status": "已发布",
+        "date": "2023-09-28 16:49:00",
+        "catalog": [
+          "面试"
+        ],
+        "urlname": "interview-2021",
+        "title": "21年初后端社招面试经历",
+        "summary": "",
+        "sort": "",
+        "updated": "2023-10-11 16:47:00"
+      },
+      "url": "https://www.notion.so/21-506a13fb16d44473bd9130fc21fe1608",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "bf727c3c-4c8b-4f90-a555-7171e5aad682",
+      "created_time": "2023-09-28T08:49:00.000Z",
+      "last_edited_time": "2023-10-11T09:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd4ce43f-629c-41b9-b09a-a603a1dc8301"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd4ce43f-629c-41b9-b09a-a603a1dc8301"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🪐"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "55559b9a-a5d8-4e9b-9fff-82a01b581b51"
+      },
+      "archived": false,
+      "properties": {
+        "cover": "",
+        "category": "",
+        "tags": [],
+        "status": "已发布",
+        "date": "2023-10-11",
+        "catalog": [
+          "about"
+        ],
+        "urlname": "about",
+        "title": "about",
+        "summary": "",
+        "sort": 1,
+        "updated": "2023-10-11 17:00:00"
+      },
+      "url": "https://www.notion.so/about-bf727c3c4c8b4f90a5557171e5aad682",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "3ab1cb5b-97ff-4af6-88dd-52ba6f6638fc",
+      "created_time": "2023-09-28T08:49:00.000Z",
+      "last_edited_time": "2023-10-11T08:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd4ce43f-629c-41b9-b09a-a603a1dc8301"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd4ce43f-629c-41b9-b09a-a603a1dc8301"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "55559b9a-a5d8-4e9b-9fff-82a01b581b51"
+      },
+      "archived": false,
+      "properties": {
+        "cover": "",
+        "category": "",
+        "tags": [
+          "blog"
+        ],
+        "status": "已发布",
+        "date": "2023-09-28 16:49:00",
+        "catalog": [
+          "blog"
+        ],
+        "urlname": "hexo-blog-CI",
+        "title": "个人博客最优实践",
+        "summary": "",
+        "sort": "",
+        "updated": "2023-10-11 16:47:00"
+      },
+      "url": "https://www.notion.so/3ab1cb5b97ff4af688dd52ba6f6638fc",
+      "public_url": null
+    }
+  ]
+}
