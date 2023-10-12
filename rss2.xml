@@ -16,21 +16,7 @@
       <title>about</title>
       <link>https://ttsths.github.io/about/</link>
       <guid>https://ttsths.github.io/about/</guid>
-      <pubDate>Wed, 11 Oct 2023 00:00:00 GMT</pubDate>
-      
-        
-        
-          
-          
-      <description>&lt;hr&gt;
-&lt;p&gt;title: about&lt;br&gt;date: 2016-09-11 14:33:14&lt;br&gt;urlname: about&lt;br&gt;tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;about&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Hey-There&quot;&gt;&lt;a href=&quot;#Hey-There&quot;</description>
-          
-        
+      <pubDate>Tue, 10 Oct 2023 16:00:00 GMT</pubDate>
       
       
       
@@ -51,13 +37,7 @@
         
           
           
-      <description>&lt;p&gt;使用 Notion 记录文章，markdown 格式&lt;/p&gt;
-&lt;p&gt;github action 自动同步 notion 文章，并推送 Telegram&lt;/p&gt;
-&lt;p&gt;本地使用&lt;/p&gt;
-&lt;p&gt;使用 hexo 搭建静态&lt;/p&gt;
-&lt;p&gt;hexo 极简主题&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</description>
+      <description>&lt;p&gt;之前使用 hexo 在本机做记录，deploy 到 github page 的方式，但是发现这样不能做云存储，不是随时随地（PS:其实是没有这个习惯）。偶然间看了 V2EX 上有关于博客最佳实践的讨论，看到了 Elog 这个开源的框架，觉得 Notion+Hexo+Action + Github Page</description>
           
         
       
