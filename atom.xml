@@ -6,7 +6,7 @@
   <link href="https://ttsths.github.io/atom.xml" rel="self"/>
   
   <link href="https://ttsths.github.io/"/>
-  <updated>2023-10-11T09:00:00.000Z</updated>
+  <updated>2023-10-23T09:13:00.000Z</updated>
   <id>https://ttsths.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lambda的序列化问题</title>
+    <link href="https://ttsths.github.io/lambda-serializable/"/>
+    <id>https://ttsths.github.io/lambda-serializable/</id>
+    <published>2023-10-23T09:05:00.000Z</published>
+    <updated>2023-10-23T09:13:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Lambda-的序列化问题&quot;&gt;&lt;a href=&quot;#Lambda-的序列化问题&quot; class=&quot;headerlink&quot; title=&quot;Lambda 的序列化问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;Lambda 的序列化问题&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>about</title>
