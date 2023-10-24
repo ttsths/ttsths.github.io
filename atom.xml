@@ -6,7 +6,7 @@
   <link href="https://ttsths.github.io/atom.xml" rel="self"/>
   
   <link href="https://ttsths.github.io/"/>
-  <updated>2023-10-23T09:13:00.000Z</updated>
+  <updated>2023-10-12T02:29:00.000Z</updated>
   <id>https://ttsths.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Lambda的序列化问题</title>
-    <link href="https://ttsths.github.io/lambda-serializable/"/>
-    <id>https://ttsths.github.io/lambda-serializable/</id>
-    <published>2023-10-23T09:05:00.000Z</published>
-    <updated>2023-10-23T09:13:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Lambda-的序列化问题&quot;&gt;&lt;a href=&quot;#Lambda-的序列化问题&quot; class=&quot;headerlink&quot; title=&quot;Lambda 的序列化问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;Lambda 的序列化问题&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>个人博客最优实践</title>
@@ -61,11 +40,34 @@
   </entry>
   
   <entry>
+    <title>Lambda的序列化问题</title>
+    <link href="https://ttsths.github.io/lambda-serializable/"/>
+    <id>https://ttsths.github.io/lambda-serializable/</id>
+    <published>2021-07-23T16:00:00.000Z</published>
+    <updated>2023-10-24T01:40:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Lambda-的序列化问题&quot;&gt;&lt;a href=&quot;#Lambda-的序列化问题&quot; class=&quot;headerlink&quot; title=&quot;Lambda 的序列化问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;Lambda 的序列化问题&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java8" scheme="https://ttsths.github.io/tags/java8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>21年初后端社招面试经历</title>
     <link href="https://ttsths.github.io/interview-2021/"/>
     <id>https://ttsths.github.io/interview-2021/</id>
-    <published>2023-09-28T08:49:00.000Z</published>
-    <updated>2023-10-11T08:47:00.000Z</updated>
+    <published>2021-04-12T16:00:00.000Z</published>
+    <updated>2023-10-24T01:40:00.000Z</updated>
     
     
       
@@ -81,6 +83,31 @@
     
     
     <category term="interview" scheme="https://ttsths.github.io/tags/interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ZGC的探索与实践</title>
+    <link href="https://ttsths.github.io/zgc-explore-practice/"/>
+    <id>https://ttsths.github.io/zgc-explore-practice/</id>
+    <published>2020-08-27T16:00:00.000Z</published>
+    <updated>2023-10-24T03:09:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ZGC-的探索与实践&quot;&gt;&lt;a href=&quot;#ZGC-的探索与实践&quot; class=&quot;headerlink&quot; title=&quot;ZGC 的探索与实践&quot;&gt;&lt;/a&gt;&lt;strong&gt;ZGC 的探索与实践&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;ZGC&quot;&gt;&lt;a href=&quot;#ZGC&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="jvm" scheme="https://ttsths.github.io/categories/jvm/"/>
+    
+    
+    <category term="jvm" scheme="https://ttsths.github.io/tags/jvm/"/>
     
   </entry>
   
