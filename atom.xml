@@ -6,7 +6,7 @@
   <link href="https://ttsths.github.io/atom.xml" rel="self"/>
   
   <link href="https://ttsths.github.io/"/>
-  <updated>2023-10-12T02:29:00.000Z</updated>
+  <updated>2023-10-23T19:34:00.000Z</updated>
   <id>https://ttsths.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>个人博客最优实践</title>
     <link href="https://ttsths.github.io/hexo-blog-CI/"/>
     <id>https://ttsths.github.io/hexo-blog-CI/</id>
-    <published>2023-09-28T08:49:00.000Z</published>
-    <updated>2023-10-12T02:29:00.000Z</updated>
+    <published>2023-09-28T00:49:00.000Z</published>
+    <updated>2023-10-23T19:34:00.000Z</updated>
     
     
       
@@ -34,8 +34,35 @@
     
     
     
+    <category term="blog" scheme="https://ttsths.github.io/categories/blog/"/>
+    
     
     <category term="blog" scheme="https://ttsths.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes原理与尝试</title>
+    <link href="https://ttsths.github.io/k8s-theory-try/"/>
+    <id>https://ttsths.github.io/k8s-theory-try/</id>
+    <published>2022-12-13T16:00:00.000Z</published>
+    <updated>2023-10-23T19:46:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Kubernetes-浅入浅出&quot;&gt;&lt;a href=&quot;#Kubernetes-浅入浅出&quot; class=&quot;headerlink&quot; title=&quot;Kubernetes 浅入浅出&quot;&gt;&lt;/a&gt;&lt;strong&gt;Kubernetes 浅入浅出&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;引言&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="k8s" scheme="https://ttsths.github.io/categories/k8s/"/>
+    
+    
+    <category term="k8s" scheme="https://ttsths.github.io/tags/k8s/"/>
     
   </entry>
   
@@ -44,18 +71,20 @@
     <link href="https://ttsths.github.io/lambda-serializable/"/>
     <id>https://ttsths.github.io/lambda-serializable/</id>
     <published>2021-07-23T16:00:00.000Z</published>
-    <updated>2023-10-24T01:40:00.000Z</updated>
+    <updated>2023-10-23T19:35:00.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Lambda-的序列化问题&quot;&gt;&lt;a href=&quot;#Lambda-的序列化问题&quot; class=&quot;headerlink&quot; title=&quot;Lambda 的序列化问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;Lambda 的序列化问题&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot;</summary>
+    <summary type="html">&lt;figure class=&quot;highlight text&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
         
       
     
     
+    
+    <category term="java" scheme="https://ttsths.github.io/categories/java/"/>
     
     
     <category term="java8" scheme="https://ttsths.github.io/tags/java8/"/>
@@ -67,7 +96,7 @@
     <link href="https://ttsths.github.io/interview-2021/"/>
     <id>https://ttsths.github.io/interview-2021/</id>
     <published>2021-04-12T16:00:00.000Z</published>
-    <updated>2023-10-24T01:40:00.000Z</updated>
+    <updated>2023-10-23T19:35:00.000Z</updated>
     
     
       
@@ -80,6 +109,8 @@
       
     
     
+    
+    <category term="interview" scheme="https://ttsths.github.io/categories/interview/"/>
     
     
     <category term="interview" scheme="https://ttsths.github.io/tags/interview/"/>

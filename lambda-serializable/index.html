@@ -11,14 +11,12 @@
 
 <title>Lambda的序列化问题</title>
 <meta name="keywords" content="Lambda的序列化问题, Simon&#39;s wooden house">
-<meta name="description" content="Lambda 的序列化问题背景最近遇到一个序列化的问题，是在跑测试用例的时候，遇到 RPC 调用后返回的数据无法解析。我们用的motan的 rpc,内部序列化用的Heassin2
-123com.xxx.api.motan.exception">
+<meta name="description" content="123456789101112cover: &quot;&quot;category: &quot;&quot;tags:  - blogstatus: 已发布date: &quot;2021-06-28 16:49:00&quot;cat">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="Lambda的序列化问题">
-<meta property="og:description" content="Lambda 的序列化问题背景最近遇到一个序列化的问题，是在跑测试用例的时候，遇到 RPC 调用后返回的数据无法解析。我们用的motan的 rpc,内部序列化用的Heassin2
-123com.xxx.api.motan.exception">
+<meta property="og:description" content="123456789101112cover: &quot;&quot;category: &quot;&quot;tags:  - blogstatus: 已发布date: &quot;2021-06-28 16:49:00&quot;cat">
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="stylesheet" href="/style/main.css">
@@ -97,7 +95,9 @@
       </div>
       <div class="post-content-wrapper">
         <div class="post-content">
-          <h1 id="Lambda-的序列化问题"><a href="#Lambda-的序列化问题" class="headerlink" title="Lambda 的序列化问题"></a><strong>Lambda 的序列化问题</strong></h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a><strong>背景</strong></h2><p>最近遇到一个序列化的问题，是在跑测试用例的时候，遇到 RPC 调用后返回的数据无法解析。我们用的<code>motan</code>的 rpc,内部序列化用的<code>Heassin2</code></p>
+          <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cover: &quot;&quot;</span><br><span class="line">category: &quot;&quot;</span><br><span class="line">tags:</span><br><span class="line">  - blog</span><br><span class="line">status: 已发布</span><br><span class="line">date: &quot;2021-06-28 16:49:00&quot;</span><br><span class="line">catalog:</span><br><span class="line">  - blog</span><br><span class="line">urlname: lambda-serializable</span><br><span class="line">title: java8 lamdba 序列化异常</span><br><span class="line">summary: &quot;&quot;</span><br><span class="line">sort: &quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Lambda-的序列化问题"><a href="#Lambda-的序列化问题" class="headerlink" title="Lambda 的序列化问题"></a><strong>Lambda 的序列化问题</strong></h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a><strong>背景</strong></h2><p>最近遇到一个序列化的问题，是在跑测试用例的时候，遇到 RPC 调用后返回的数据无法解析。我们用的<code>motan</code>的 rpc,内部序列化用的<code>Heassin2</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.xxx.api.motan.exception.MotanFrameworkException: error_message: encode error!type:response, com.xxx.api.motan.rpc.DefaultResponse@3368de44, origin errmsg:Serialized <span class="keyword">class</span> <span class="title class_">com</span>.xxx.abtest.traffic.rpc.condition.CustomCondition$$Lambda$<span class="number">462</span>/<span class="number">331671338</span> must implement java.io.Serializable</span><br><span class="line"> field: com.xxx.abtest.traffic.rpc.condition.CustomCondition.operators</span><br><span class="line"> class: com.xxx.abtest.traffic.rpc.condition.CustomCondition (object=com.xxx.abtest.traffic.rpc.condition.CustomCondition@58a58a69)</span><br></pre></td></tr></table></figure>
 
 <p>从异常堆栈可以很快定位到是<code>CustomCondition</code>的<code>operators</code>没有序列化导致的</p>

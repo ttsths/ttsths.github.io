@@ -9,14 +9,14 @@
     <atom:link href="https://ttsths.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 12 Oct 2023 02:29:00 GMT</pubDate>
+    <pubDate>Mon, 23 Oct 2023 19:34:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>个人博客最优实践</title>
       <link>https://ttsths.github.io/hexo-blog-CI/</link>
       <guid>https://ttsths.github.io/hexo-blog-CI/</guid>
-      <pubDate>Thu, 28 Sep 2023 08:49:00 GMT</pubDate>
+      <pubDate>Thu, 28 Sep 2023 00:49:00 GMT</pubDate>
       
         
         
@@ -29,11 +29,40 @@
       
       
       
+      <category domain="https://ttsths.github.io/categories/blog/">blog</category>
+      
       
       <category domain="https://ttsths.github.io/tags/blog/">blog</category>
       
       
       <comments>https://ttsths.github.io/hexo-blog-CI/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>kubernetes原理与尝试</title>
+      <link>https://ttsths.github.io/k8s-theory-try/</link>
+      <guid>https://ttsths.github.io/k8s-theory-try/</guid>
+      <pubDate>Tue, 13 Dec 2022 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;Kubernetes-浅入浅出&quot;&gt;&lt;a href=&quot;#Kubernetes-浅入浅出&quot; class=&quot;headerlink&quot; title=&quot;Kubernetes 浅入浅出&quot;&gt;&lt;/a&gt;&lt;strong&gt;Kubernetes 浅入浅出&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;引言&quot;&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://ttsths.github.io/categories/k8s/">k8s</category>
+      
+      
+      <category domain="https://ttsths.github.io/tags/k8s/">k8s</category>
+      
+      
+      <comments>https://ttsths.github.io/k8s-theory-try/#disqus_thread</comments>
       
     </item>
     
@@ -47,12 +76,14 @@
         
           
           
-      <description>&lt;h1 id=&quot;Lambda-的序列化问题&quot;&gt;&lt;a href=&quot;#Lambda-的序列化问题&quot; class=&quot;headerlink&quot; title=&quot;Lambda 的序列化问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;Lambda 的序列化问题&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot;</description>
+      <description>&lt;figure class=&quot;highlight text&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</description>
           
         
       
       
       
+      
+      <category domain="https://ttsths.github.io/categories/java/">java</category>
       
       
       <category domain="https://ttsths.github.io/tags/java8/">java8</category>
@@ -79,6 +110,8 @@
       
       
       
+      
+      <category domain="https://ttsths.github.io/categories/interview/">interview</category>
       
       
       <category domain="https://ttsths.github.io/tags/interview/">interview</category>
