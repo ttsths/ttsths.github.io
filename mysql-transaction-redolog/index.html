@@ -85,8 +85,8 @@ Durabili">
     
   
     
-      <a href="/archives" class="menu purple-link">
-        归档
+      <a href="/categories" class="menu purple-link">
+        分类
       </a>
     
   
@@ -143,10 +143,7 @@ Durabili">
 <h2 id="事务的语法"><a href="#事务的语法" class="headerlink" title="事务的语法"></a><strong>事务的语法</strong></h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> ## 开启事务</span><br><span class="line"> BEGIN;</span><br><span class="line"> START TRANSACTION;</span><br><span class="line"> ## 只读事务</span><br><span class="line"> START TRANSACTION READ ONLY;</span><br><span class="line"> ## 读写事务</span><br><span class="line"> START TRANSACTION READ WRITE</span><br><span class="line"> ## 一致性读</span><br><span class="line"> START TRANSACTION WITH CONSISTENT SNAPSHOT</span><br><span class="line"> ## 提交事务</span><br><span class="line"> COMMIT;</span><br><span class="line"> ## 手动中止事务</span><br><span class="line"> ROLLBACK;</span><br><span class="line"> ## 隐式事务</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>隐式事务<ul>
-<li>当我们使用<code>ALTER USER</code>、<code>CREATE USER</code>、<code>DROP USER</code>、<code>GRANT</code>、<code>RENAME USER</code>、<code>REVOKE</code>、<code>SET PASSWORD</code>等语句时也会隐式的提交前边语句所属于的事务。</li>
-</ul>
-</li>
+<li>隐式事务</li>
 <li>保存点-savepoint</li>
 </ul>
 <h1 id="Redo-重做日志"><a href="#Redo-重做日志" class="headerlink" title="Redo 重做日志"></a><strong>Redo 重做日志</strong></h1><p>在执行事务的过程中，每执行一条语句，就有可能产生若干条 redo 日志</p>
