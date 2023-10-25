@@ -168,4 +168,29 @@
     
   </entry>
   
+  <entry>
+    <title>MySQL事务与redo log</title>
+    <link href="https://ttsths.github.io/mysql-transaction-redolog/"/>
+    <id>https://ttsths.github.io/mysql-transaction-redolog/</id>
+    <published>2019-08-03T16:00:00.000Z</published>
+    <updated>2023-10-25T07:51:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; title=&quot;事务&quot;&gt;&lt;/a&gt;&lt;strong&gt;事务&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;事务的特性&quot;&gt;&lt;a href=&quot;#事务的特性&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://ttsths.github.io/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="https://ttsths.github.io/tags/mysql/"/>
+    
+  </entry>
+  
 </feed>

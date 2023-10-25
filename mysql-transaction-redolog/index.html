@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>MySQL事务与redo log</title>
+<meta name="keywords" content="MySQL事务与redo log, Simon&#39;s wooden house">
+<meta name="description" content="事务事务的特性
+Atomicity-原子性
+事务内的操作要么全部成功，要不全部不成功
+
+
+Consistency-一致性
+事务提交前后符合数据库的数据时一致
+
+
+Isolation-隔离性
+事务之间是相互隔离，互不影响
+
+
+Durabili">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="MySQL事务与redo log">
+<meta property="og:description" content="事务事务的特性
+Atomicity-原子性
+事务内的操作要么全部成功，要不全部不成功
+
+
+Consistency-一致性
+事务提交前后符合数据库的数据时一致
+
+
+Isolation-隔离性
+事务之间是相互隔离，互不影响
+
+
+Durabili">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Simon's wooden house" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Simon's wooden house" type="application/rss+xml">
+</head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://ttsths.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://ttsths.github.io">
+        <h1 class="site-title">Simon&#39;s wooden house</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">MySQL事务与redo log</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-08-04</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/mysql/">
+              mysql
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a><strong>事务</strong></h1><h2 id="事务的特性"><a href="#事务的特性" class="headerlink" title="事务的特性"></a><strong>事务的特性</strong></h2><ul>
+<li>Atomicity-原子性<ul>
+<li>事务内的操作要么全部成功，要不全部不成功</li>
+</ul>
+</li>
+<li>Consistency-一致性<ul>
+<li>事务提交前后符合数据库的数据时一致</li>
+</ul>
+</li>
+<li>Isolation-隔离性<ul>
+<li>事务之间是相互隔离，互不影响</li>
+</ul>
+</li>
+<li>Durability-持久性<ul>
+<li>事务一旦提交，无法改变</li>
+</ul>
+</li>
+</ul>
+<h2 id="事务的状态"><a href="#事务的状态" class="headerlink" title="事务的状态"></a><strong>事务的状态</strong></h2><p>活动的、部分提交的、提交的、失败的、中止的</p>
+<h2 id="事务的语法"><a href="#事务的语法" class="headerlink" title="事务的语法"></a><strong>事务的语法</strong></h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> ## 开启事务</span><br><span class="line"> BEGIN;</span><br><span class="line"> START TRANSACTION;</span><br><span class="line"> ## 只读事务</span><br><span class="line"> START TRANSACTION READ ONLY;</span><br><span class="line"> ## 读写事务</span><br><span class="line"> START TRANSACTION READ WRITE</span><br><span class="line"> ## 一致性读</span><br><span class="line"> START TRANSACTION WITH CONSISTENT SNAPSHOT</span><br><span class="line"> ## 提交事务</span><br><span class="line"> COMMIT;</span><br><span class="line"> ## 手动中止事务</span><br><span class="line"> ROLLBACK;</span><br><span class="line"> ## 隐式事务</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>隐式事务<ul>
+<li>当我们使用<code>ALTER USER</code>、<code>CREATE USER</code>、<code>DROP USER</code>、<code>GRANT</code>、<code>RENAME USER</code>、<code>REVOKE</code>、<code>SET PASSWORD</code>等语句时也会隐式的提交前边语句所属于的事务。</li>
+</ul>
+</li>
+<li>保存点-savepoint</li>
+</ul>
+<h1 id="Redo-重做日志"><a href="#Redo-重做日志" class="headerlink" title="Redo 重做日志"></a><strong>Redo 重做日志</strong></h1><p>在执行事务的过程中，每执行一条语句，就有可能产生若干条 redo 日志</p>
+<h2 id="redo-日志格式"><a href="#redo-日志格式" class="headerlink" title="redo 日志格式"></a><strong>redo 日志格式</strong></h2><ul>
+<li>type：日志类型</li>
+<li>Space ID：表空间 ID</li>
+<li>page number:页号</li>
+<li>data:具体内容</li>
+</ul>
+<p><strong>redo 日志会把事务在执行过程中对数据库所做的所有修改都记录下来，在之后系统奔溃重启后可以把事务所做的任何修改都恢复出来。</strong></p>
+<h2 id="Mini-Transaction"><a href="#Mini-Transaction" class="headerlink" title="Mini-Transaction"></a><strong>Mini-Transaction</strong></h2><p>以组的形式写入 redo 日志</p>
+<p>以下情况组不可分割</p>
+<ul>
+<li>更新<code>Max Row ID</code>属性时产生的<code>redo</code>日志是不可分割的。</li>
+<li>向聚簇索引对应<code>B+</code>树的页面中插入一条记录时产生的<code>redo</code>日志是不可分割的。</li>
+<li>向某个二级索引对应<code>B+</code>树的页面中插入一条记录时产生的<code>redo</code>日志是不可分割的。</li>
+<li>还有其他的一些对页面的访问操作时产生的<code>redo</code>日志是不可分割的。。。</li>
+</ul>
+<h2 id="redo-日志的写入过程"><a href="#redo-日志的写入过程" class="headerlink" title="redo 日志的写入过程"></a><strong>redo 日志的写入过程</strong></h2><p>redo log block</p>
+<p>Redo 日志缓冲区 512KB 的 block</p>
+<p>redo 日志的刷盘时机</p>
+<h2 id="redo-日志文件组"><a href="#redo-日志文件组" class="headerlink" title="redo 日志文件组"></a><strong>redo 日志文件组</strong></h2><p>Checkpoint：redo 日志只是为了系统奔溃后恢复脏页用的，如果对应的脏页已经刷新到磁盘，那么相对应的 redo 日志就不需要了（通过更新 flush 链表）checkpoint_lsn 增加的形式来标识可以被覆盖的 redo 日志。</p>
+<p>Log Sequeue Number:日志序列号(lsn)</p>
+<p>日志首选写入到<code>log_buffer</code>中，之后才会被刷新到磁盘上的 redo 日志文件。通过<code>flushed_to_disk_lsn</code>参数来刷新，初始值未<code>lsn</code>的初始值<strong>8704</strong>。</p>
+<h2 id="奔溃恢复"><a href="#奔溃恢复" class="headerlink" title="奔溃恢复"></a><strong>奔溃恢复</strong></h2><ul>
+<li>确认恢复的起点：redo 日志文件组的第一个文件的管理信息中有两个 block 中选出 checkpoint_no 比较大的对应的 checkpoint_lsn 对应的 redo 日志的 checkpoint_offset</li>
+<li>确认恢复的终点：<code>log clock header</code>中的<code>LOG_BLOCK_HDR_DATA_LEN</code>的属性，该属性记录了当前 block 里面使用了多少字节的空间， 未被填满的永远为 512</li>
+<li>如何恢复：<ul>
+<li>使用哈希表，根据 redo 日志的<code>space ID</code>和<code>page number</code>属性计算出散列值（可以算出相同的页），多个相同的散列值(槽)之间使用链表连接</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%8B%E5%8A%A1"><span class="top-box-text">事务</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7"><span class="top-box-text">事务的特性</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%8A%B6%E6%80%81"><span class="top-box-text">事务的状态</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="top-box-text">事务的语法</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#Redo-%E9%87%8D%E5%81%9A%E6%97%A5%E5%BF%97"><span class="top-box-text">Redo 重做日志</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#redo-%E6%97%A5%E5%BF%97%E6%A0%BC%E5%BC%8F"><span class="top-box-text">redo 日志格式</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Mini-Transaction"><span class="top-box-text">Mini-Transaction</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#redo-%E6%97%A5%E5%BF%97%E7%9A%84%E5%86%99%E5%85%A5%E8%BF%87%E7%A8%8B"><span class="top-box-text">redo 日志的写入过程</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#redo-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E7%BB%84"><span class="top-box-text">redo 日志文件组</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%A5%94%E6%BA%83%E6%81%A2%E5%A4%8D"><span class="top-box-text">奔溃恢复</span></a></li></ol></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+  </div>
+
+
+    <div id="gitalk-container"></div>
+
+
+
+    <link rel="stylesheet" href="/style/gitalk.min.css"/>
+    <script src="/js/gitalk.min.js"></script>
+    <script>
+        const config = {"clientId":"82abd3d3342d352924ed","clientSecret":"95daa55e9ad58a03856380524fdccd29f8913b57","repository":"blogimg","owner":"ttsths","createIssueManually":true};
+        const gitalk = new Gitalk({
+            clientID: config.clientId,
+            clientSecret: config.clientSecret,
+            repo: config.repository,
+            owner: config.owner,
+            admin: [config.owner],
+            id: location.pathname.slice(1, location.pathname.lastIndexOf('/')).substring(0, 49),       // Ensure uniqueness and length less than 50
+            distractionFreeMode: false,  // Facebook-like distraction free mode
+            createIssueManually: config.createIssueManually ? true : false
+        });
+
+        gitalk.render('gitalk-container')
+
+    </script>
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/ttsths" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJMR7HEFGP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LJMR7HEFGP');
+    </script>
+
+
+    <script async src="https://hm.baidu.com/hm.js?2c993bc011b852c2cce0cf9087d6bbe1"></script>
+
+
+
+
+  </body>
+</html>
+
