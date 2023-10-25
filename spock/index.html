@@ -149,7 +149,7 @@
 <li><code>with</code>：验证复杂返回对象使用</li>
 <li><code>cleanup</code> : 清理必要的资源,一定会执行的 block</li>
 </ul>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1</span><br><span class="line">//所有的测试类需要继承Specification2</span><br><span class="line">class MyFirstTest extends Specification &#123;3</span><br><span class="line">  // fields4</span><br><span class="line">  // fixture methods5</span><br><span class="line">  // feature methods6</span><br><span class="line">  // helper methods7</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有的测试类需要继承Specification</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyFirstTest</span> <span class="keyword">extends</span> <span class="title class_">Specification</span> &#123;</span><br><span class="line">  <span class="comment">// fields</span></span><br><span class="line">  <span class="comment">// fixture methods</span></span><br><span class="line">  <span class="comment">// feature methods</span></span><br><span class="line">  <span class="comment">// helper methods</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>固定方法</strong></p>
 <ul>
@@ -160,6 +160,7 @@
 </ul>
 <p><strong>Feature 方法</strong></p>
 <p>生命周期</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgspock-life-cycle.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgspock-life-cycle.png"  lazyload></a></p>
 <ul>
 <li>Setup</li>
 <li>Stimulus</li>
@@ -187,107 +188,81 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过身份证号码获取出生日期、性别、年龄</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> certificateNo</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回的出生日期格式：1990-01-01 性别格式：F-女，M-男</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title function_">getBirAgeSex</span><span class="params">(String certificateNo)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">birthday</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">age</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">sex</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> Calendar.getInstance().get(Calendar.YEAR);</span><br><span class="line">        <span class="type">char</span>[] number = certificateNo.toCharArray();</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (number.length == <span class="number">15</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>; x &lt; number.length; x++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!flag) <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">                flag = Character.isDigit(number[x]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (number.length == <span class="number">18</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>; x &lt; number.length - <span class="number">1</span>; x++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!flag) <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">                flag = Character.isDigit(number[x]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag &amp;&amp; certificateNo.length() == <span class="number">15</span>) &#123;</span><br><span class="line">            birthday = <span class="string">&quot;19&quot;</span> + certificateNo.substring(<span class="number">6</span>, <span class="number">8</span>) + <span class="string">&quot;-&quot;</span></span><br><span class="line">                    + certificateNo.substring(<span class="number">8</span>, <span class="number">10</span>) + <span class="string">&quot;-&quot;</span></span><br><span class="line">                    + certificateNo.substring(<span class="number">10</span>, <span class="number">12</span>);</span><br><span class="line">            sex = Integer.parseInt(certificateNo.substring(certificateNo.length() - <span class="number">3</span>,</span><br><span class="line">                    certificateNo.length())) % <span class="number">2</span> == <span class="number">0</span> ? <span class="string">&quot;女&quot;</span> : <span class="string">&quot;男&quot;</span>;</span><br><span class="line">            age = (year - Integer.parseInt(<span class="string">&quot;19&quot;</span> + certificateNo.substring(<span class="number">6</span>, <span class="number">8</span>))) + <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (flag &amp;&amp; certificateNo.length() == <span class="number">18</span>) &#123;</span><br><span class="line">            birthday = certificateNo.substring(<span class="number">6</span>, <span class="number">10</span>) + <span class="string">&quot;-&quot;</span></span><br><span class="line">                    + certificateNo.substring(<span class="number">10</span>, <span class="number">12</span>) + <span class="string">&quot;-&quot;</span></span><br><span class="line">                    + certificateNo.substring(<span class="number">12</span>, <span class="number">14</span>);</span><br><span class="line">            sex = Integer.parseInt(certificateNo.substring(certificateNo.length() - <span class="number">4</span>,</span><br><span class="line">                    certificateNo.length() - <span class="number">1</span>)) % <span class="number">2</span> == <span class="number">0</span> ? <span class="string">&quot;女&quot;</span> : <span class="string">&quot;男&quot;</span>;</span><br><span class="line">            age = (year - Integer.parseInt(certificateNo.substring(<span class="number">6</span>, <span class="number">10</span>))) + <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;birthday&quot;</span>, birthday);</span><br><span class="line">        map.put(<span class="string">&quot;age&quot;</span>, age);</span><br><span class="line">        map.put(<span class="string">&quot;sex&quot;</span>, sex);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Unroll</span>注解表示展开where标签下面的每一行测试，作为单独的case跑</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Unroll</span></span><br><span class="line">    def <span class="string">&quot;多分支测试，id:#idNo,结果：#result&quot;</span>() &#123;</span><br><span class="line">        expect: <span class="string">&quot;expect = 是when + then标签的组合&quot;</span></span><br><span class="line">        MultiCase.getBirAgeSex(idNo) == result</span><br><span class="line">        where:</span><br><span class="line">        idNo || result</span><br><span class="line">        <span class="string">&quot;310168199809187333&quot;</span> || [<span class="string">&quot;birthday&quot;</span>: <span class="string">&quot;1998-09-18&quot;</span>, <span class="string">&quot;sex&quot;</span>: <span class="string">&quot;男&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="string">&quot;24&quot;</span>]</span><br><span class="line">        <span class="string">&quot;320168200212084268&quot;</span> || [<span class="string">&quot;birthday&quot;</span>: <span class="string">&quot;2002-12-08&quot;</span>, <span class="string">&quot;sex&quot;</span>: <span class="string">&quot;女&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="string">&quot;20&quot;</span>]</span><br><span class="line">        <span class="string">&quot;330168199301214267&quot;</span> || [<span class="string">&quot;birthday&quot;</span>: <span class="string">&quot;1993-01-21&quot;</span>, <span class="string">&quot;sex&quot;</span>: <span class="string">&quot;女&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="string">&quot;29&quot;</span>]</span><br><span class="line">        <span class="string">&quot;411281870628201&quot;</span>    || [<span class="string">&quot;birthday&quot;</span>: <span class="string">&quot;1987-06-28&quot;</span>, <span class="string">&quot;sex&quot;</span>: <span class="string">&quot;男&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="string">&quot;35&quot;</span>]</span><br><span class="line">        <span class="string">&quot;427281730307862&quot;</span>    || [<span class="string">&quot;birthday&quot;</span>: <span class="string">&quot;1973-03-07&quot;</span>, <span class="string">&quot;sex&quot;</span>: <span class="string">&quot;女&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="string">&quot;49&quot;</span>]</span><br><span class="line">        <span class="string">&quot;479281691111377&quot;</span>    || [<span class="string">&quot;birthday&quot;</span>: <span class="string">&quot;1969-11-11&quot;</span>, <span class="string">&quot;sex&quot;</span>: <span class="string">&quot;男&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="string">&quot;53&quot;</span>]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="微服务-RPC-依赖场景"><a href="#微服务-RPC-依赖场景" class="headerlink" title="微服务 RPC 依赖场景"></a><strong>微服务 RPC 依赖场景</strong></h3><p>微服务下往往会有很多上下游的依赖场景，所以 Mock 的需求是我们在写单测的时候经常会用到的功能。</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgspock-test-framemark.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgspock-test-framemark.png"  lazyload></a></p>
 <p><code>Mockito</code> 是一种 Java Mock 框架，主要是用来做 Mock 测试，它可以模拟任何 Spring 管理的 Bean、模拟方法的返回值、模拟抛出异常等等，避免你为了测试一个方法，却要自行构建整个 bean 的依赖链。</p>
-<blockquote>
-<p>@MockBean Vs @Mock</p>
-</blockquote>
-<pre><code>@MockBean**SpringBoot 在执行单元测试时，会将该注解的 Bean 替换掉 IOC 容器中原生 Bean。**
+<details>
+  <summary>@MockBean Vs @Mock</summary>
 
+<p>@MockBean<strong>SpringBoot 在执行单元测试时，会将该注解的 Bean 替换掉 IOC 容器中原生 Bean。</strong></p>
+  </details>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(MockitoJUnitRunner.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MockTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Mock</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Before&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">saveProjectBase</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
-Mock的限制
-
-- 不能 Mock 静态方法
-- 不能 Mock private 方法
-- 不能 Mock final class
-
-常见的使用方式
-
-
-&gt; Mockito.when( 对象.方法名() ).thenReturn( 自定义结果 )
-
-
-`PowerMock`
-
-
-PowerMock去模拟静态方法、`final`方法、私有方法等。
-
-
-PowerMock的`PowerMockRunner`也是继承自JUnit，所以使用PowerMock的`@PowerMockRunnerDelegate()`注解，可以指定Spock的父类`Sputnik`去代理运行PowerMock
-
-
-如果单元测试代码不需要对静态方法、`final`方法Mock，就没必要使用PowerMock，使用Spock自带的`Mock()`就足够了。因为PowerMock的原理是在编译期通过ASM字节码修改工具修改代码，然后使用自己的`ClassLoader`加载，而加载的静态方法越多，测试耗时就会越长。【既要Mock静态方法，也要Mock对象方法，就必须使用PowerMock提供的能力】
-
-
-`Spock`
-
-- `Mock()` 虚拟类，隔离真实类，为每个方法返回一个默认值，引用类型为null ，基础类型为0或者false
-- `Stub`() 只返回预先准备好的数据，不管调用多少次
-- `Spy`() 间谍包装一个真实对象，默认情况下将调用真实方法，也提供Mock的功能。**功能很强大但是官网不推荐使用，mock()足够了**
-
-    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 被测试代码</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">methodA</span><span class="params">(<span class="type">int</span> i)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> methodB();</span><br><span class="line">        <span class="comment">// 其他业务逻辑...</span></span><br><span class="line">        <span class="keyword">if</span> (j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.max(i, j);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.min(i, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="title function_">methodB</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;methodB call&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>; <span class="comment">// 结果假如是从查询数据库或其他接口获取</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单元测试</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClassTest</span> <span class="keyword">extends</span> <span class="title class_">Specification</span> &#123;</span><br><span class="line">  <span class="comment">// 结果显示是不会输出&quot;methodB call&quot;的，因为methodB()方法已经被mock了，虽然是在同一个类的methodA()方法里有调用methodB()，但也不会被真正被调用。</span></span><br><span class="line">    def <span class="string">&quot;testMethodA&quot;</span>() &#123;</span><br><span class="line">        given:</span><br><span class="line">        <span class="type">def</span> <span class="variable">spy</span> <span class="operator">=</span> Spy(MyClass)</span><br><span class="line">        <span class="number">1</span> * spy.methodB() &gt;&gt; <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        when:</span><br><span class="line">        <span class="type">def</span> <span class="variable">result</span> <span class="operator">=</span> spy.methodA(-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        then:</span><br><span class="line">        result &gt; <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-### **异常测试**
-
-
-spock内置的`thrown()`方法可以捕获预期异常并校验
-
-
-### **特殊场景**
-
-- static
-
-    `powermock`
-
-- abstract
-
-抽象方法/父类super方法的mock我们可以借用powermock的能力来实现
-
-
-`PowerMockito.when(child.parentMethod()).thenReturn(parentValue)`
-
-- final
-
-    `powermock`
-
-- private
-
-    使用`powermock`的`Whitebox.invokeMethod()`方法可以调用对象的私有方法
-
-
-    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个参数为对象，第二个参数为该对象的私有方法名，后面的可变参数为传入的参数</span></span><br><span class="line">        Whitebox.invokeMethod(demoRegisterService, <span class="string">&quot;sendRegisterEvent&quot;</span>, organizationDO, userDO, userDO, userDO)</span><br></pre></td></tr></table></figure>
-
-- void
-
-一般来说无返回值的方法，内部逻辑会修改入参的属性值，比如参数是个对象，那代码里可能会修改它的属性值，虽然没有返回，但还是可以通过校验入参的属性来测试void方法
-
-- db
-
-    对于DAO测试有一般最简的方式是直接使用`@SpringBootTest`注解启动测试环境，通过Spring创建Mybatis、Mapper实例。但是一般会存在对底层数据的强依赖，更好的测试应该隔离底层依赖，测试用例可以复用
-
-
-### **附言**
-
-
-在开发过程中，随手写单测是一个好的习惯，好的单测是比较耗时的，往往大于开发时间。但是好的单测，对于代码的质量提升很大。建议在梳理完流程框架之后，编写相应的测试用例框架。
-
-- `jacoco` maven测试覆盖率插件
-
-### **参考**
-
-- [**老K的Spock系列**](http://javakk.com/category/spock)
-- [**Spock+powermock的单元测试笔记**](https://www.cnblogs.com/nanzhuli/p/15607477.html)
-- [**Spock测试框架在美团优选的实践**](https://tech.meituan.com/2021/08/06/spock-practice-in-meituan.html)
-- [**Spock官网**](https://spockframework.org/spock/docs/2.3/index.html)
-</code></pre>
+<p>Mock 的限制</p>
+<ul>
+<li>不能 Mock 静态方法</li>
+<li>不能 Mock private 方法</li>
+<li>不能 Mock final class</li>
+</ul>
+<p>常见的使用方式</p>
+<blockquote>
+<p>Mockito.when( 对象.方法名() ).thenReturn( 自定义结果 )</p>
+</blockquote>
+<p><code>PowerMock</code></p>
+<p>PowerMock 去模拟静态方法、<code>final</code>方法、私有方法等。</p>
+<p>PowerMock 的<code>PowerMockRunner</code>也是继承自 JUnit，所以使用 PowerMock 的<code>@PowerMockRunnerDelegate()</code>注解，可以指定 Spock 的父类<code>Sputnik</code>去代理运行 PowerMock</p>
+<p>如果单元测试代码不需要对静态方法、<code>final</code>方法 Mock，就没必要使用 PowerMock，使用 Spock 自带的<code>Mock()</code>就足够了。因为 PowerMock 的原理是在编译期通过 ASM 字节码修改工具修改代码，然后使用自己的<code>ClassLoader</code>加载，而加载的静态方法越多，测试耗时就会越长。【既要 Mock 静态方法，也要 Mock 对象方法，就必须使用 PowerMock 提供的能力】</p>
+<p><code>Spock</code></p>
+<ul>
+<li><p><code>Mock()</code> 虚拟类，隔离真实类，为每个方法返回一个默认值，引用类型为 null ，基础类型为 0 或者 false</p>
+</li>
+<li><p><code>Stub</code>() 只返回预先准备好的数据，不管调用多少次</p>
+</li>
+<li><p><code>Spy</code>() 间谍包装一个真实对象，默认情况下将调用真实方法，也提供 Mock 的功能。<strong>功能很强大但是官网不推荐使用，mock()足够了</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 被测试代码</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">methodA</span><span class="params">(<span class="type">int</span> i)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> methodB();</span><br><span class="line">        <span class="comment">// 其他业务逻辑...</span></span><br><span class="line">        <span class="keyword">if</span> (j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.max(i, j);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.min(i, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="title function_">methodB</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;methodB call&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>; <span class="comment">// 结果假如是从查询数据库或其他接口获取</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单元测试</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClassTest</span> <span class="keyword">extends</span> <span class="title class_">Specification</span> &#123;</span><br><span class="line">  <span class="comment">// 结果显示是不会输出&quot;methodB call&quot;的，因为methodB()方法已经被mock了，虽然是在同一个类的methodA()方法里有调用methodB()，但也不会被真正被调用。</span></span><br><span class="line">    def <span class="string">&quot;testMethodA&quot;</span>() &#123;</span><br><span class="line">        given:</span><br><span class="line">        <span class="type">def</span> <span class="variable">spy</span> <span class="operator">=</span> Spy(MyClass)</span><br><span class="line">        <span class="number">1</span> * spy.methodB() &gt;&gt; <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        when:</span><br><span class="line">        <span class="type">def</span> <span class="variable">result</span> <span class="operator">=</span> spy.methodA(-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        then:</span><br><span class="line">        result &gt; <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="异常测试"><a href="#异常测试" class="headerlink" title="异常测试"></a><strong>异常测试</strong></h3><p>spock 内置的<code>thrown()</code>方法可以捕获预期异常并校验</p>
+<h3 id="特殊场景"><a href="#特殊场景" class="headerlink" title="特殊场景"></a><strong>特殊场景</strong></h3><ul>
+<li><p>static</p>
+<p><code>powermock</code></p>
+</li>
+<li><p>abstract</p>
+</li>
+</ul>
+<p>抽象方法&#x2F;父类 super 方法的 mock 我们可以借用 powermock 的能力来实现</p>
+<p><code>PowerMockito.when(child.parentMethod()).thenReturn(parentValue)</code></p>
+<ul>
+<li><p>final</p>
+<p><code>powermock</code></p>
+</li>
+<li><p>private</p>
+<p>使用<code>powermock</code>的<code>Whitebox.invokeMethod()</code>方法可以调用对象的私有方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个参数为对象，第二个参数为该对象的私有方法名，后面的可变参数为传入的参数</span></span><br><span class="line">        Whitebox.invokeMethod(demoRegisterService, <span class="string">&quot;sendRegisterEvent&quot;</span>, organizationDO, userDO, userDO, userDO)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>void</p>
+</li>
+</ul>
+<p>一般来说无返回值的方法，内部逻辑会修改入参的属性值，比如参数是个对象，那代码里可能会修改它的属性值，虽然没有返回，但还是可以通过校验入参的属性来测试 void 方法</p>
+<ul>
+<li><p>db</p>
+<p>对于 DAO 测试有一般最简的方式是直接使用<code>@SpringBootTest</code>注解启动测试环境，通过 Spring 创建 Mybatis、Mapper 实例。但是一般会存在对底层数据的强依赖，更好的测试应该隔离底层依赖，测试用例可以复用</p>
+</li>
+</ul>
+<h3 id="附言"><a href="#附言" class="headerlink" title="附言"></a><strong>附言</strong></h3><p>在开发过程中，随手写单测是一个好的习惯，好的单测是比较耗时的，往往大于开发时间。但是好的单测，对于代码的质量提升很大。建议在梳理完流程框架之后，编写相应的测试用例框架。</p>
+<ul>
+<li><code>jacoco</code> maven 测试覆盖率插件</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a><strong>参考</strong></h3><ul>
+<li><a target="_blank" rel="noopener" href="http://javakk.com/category/spock"><strong>老 K 的 Spock 系列</strong></a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/nanzhuli/p/15607477.html"><strong>Spock+powermock 的单元测试笔记</strong></a></li>
+<li><a target="_blank" rel="noopener" href="https://tech.meituan.com/2021/08/06/spock-practice-in-meituan.html"><strong>Spock 测试框架在美团优选的实践</strong></a></li>
+<li><a target="_blank" rel="noopener" href="https://spockframework.org/spock/docs/2.3/index.html"><strong>Spock 官网</strong></a></li>
+</ul>
 
         </div>
           
         <div class="top-div">
-          <ol class="top-box"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%95%E6%B5%8B"><span class="top-box-text">为什么写单测</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Spock"><span class="top-box-text">Spock</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#spock-%E5%85%A5%E9%97%A8"><span class="top-box-text">spock 入门</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%B8%B8%E8%A7%81%E6%B5%8B%E8%AF%95%E5%9C%BA%E6%99%AF"><span class="top-box-text">常见测试场景</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF%E5%9C%BA%E6%99%AF"><span class="top-box-text">多分支场景</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1-RPC-%E4%BE%9D%E8%B5%96%E5%9C%BA%E6%99%AF"><span class="top-box-text">微服务 RPC 依赖场景</span></a></li></ol></li></ol>
+          <ol class="top-box"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%95%E6%B5%8B"><span class="top-box-text">为什么写单测</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Spock"><span class="top-box-text">Spock</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#spock-%E5%85%A5%E9%97%A8"><span class="top-box-text">spock 入门</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%B8%B8%E8%A7%81%E6%B5%8B%E8%AF%95%E5%9C%BA%E6%99%AF"><span class="top-box-text">常见测试场景</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF%E5%9C%BA%E6%99%AF"><span class="top-box-text">多分支场景</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1-RPC-%E4%BE%9D%E8%B5%96%E5%9C%BA%E6%99%AF"><span class="top-box-text">微服务 RPC 依赖场景</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%BC%82%E5%B8%B8%E6%B5%8B%E8%AF%95"><span class="top-box-text">异常测试</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E7%89%B9%E6%AE%8A%E5%9C%BA%E6%99%AF"><span class="top-box-text">特殊场景</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E9%99%84%E8%A8%80"><span class="top-box-text">附言</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%8F%82%E8%80%83"><span class="top-box-text">参考</span></a></li></ol></li></ol>
         </div>
           
       </div>
