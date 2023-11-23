@@ -6,7 +6,7 @@
   <link href="https://ttsths.github.io/atom.xml" rel="self"/>
   
   <link href="https://ttsths.github.io/"/>
-  <updated>2023-10-25T08:06:00.000Z</updated>
+  <updated>2023-11-23T12:59:00.000Z</updated>
   <id>https://ttsths.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NAS再入土</title>
+    <link href="https://ttsths.github.io/nas-2023/"/>
+    <id>https://ttsths.github.io/nas-2023/</id>
+    <published>2023-11-17T16:00:00.000Z</published>
+    <updated>2023-11-23T12:59:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;双 11 在张大妈上看到京东国际 appleTV-2022 的车，心心念念良久在领导的鼓励下，上车。墙内 AppleTV</summary>
+        
+      
+    
+    
+    
+    <category term="NAS" scheme="https://ttsths.github.io/categories/NAS/"/>
+    
+    
+    <category term="NAS" scheme="https://ttsths.github.io/tags/NAS/"/>
+    
+  </entry>
   
   <entry>
     <title>个人博客最优实践</title>

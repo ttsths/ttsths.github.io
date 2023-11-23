@@ -9,8 +9,35 @@
     <atom:link href="https://ttsths.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 25 Oct 2023 08:06:00 GMT</pubDate>
+    <pubDate>Thu, 23 Nov 2023 12:59:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>NAS再入土</title>
+      <link>https://ttsths.github.io/nas-2023/</link>
+      <guid>https://ttsths.github.io/nas-2023/</guid>
+      <pubDate>Fri, 17 Nov 2023 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;双 11 在张大妈上看到京东国际 appleTV-2022 的车，心心念念良久在领导的鼓励下，上车。墙内 AppleTV</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://ttsths.github.io/categories/NAS/">NAS</category>
+      
+      
+      <category domain="https://ttsths.github.io/tags/NAS/">NAS</category>
+      
+      
+      <comments>https://ttsths.github.io/nas-2023/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>个人博客最优实践</title>
