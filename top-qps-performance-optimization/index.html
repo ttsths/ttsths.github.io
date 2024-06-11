@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>高QPS下自研Rpc框架性能调优</title>
+<meta name="keywords" content="高QPS下自研Rpc框架性能调优, Simon&#39;s wooden house">
+<meta name="description" content="高 QPS 下自研 Rpc 框架性能调优问题背景公司是基于医疗互联网的 Saas 模式，给几千家医院提供互联网医院服务。突然 5.23 浙江省中乌梅汤 2.0 爆红全网。
+排查回顾
+现象
+高峰时期，用户进入公众号首页出现白屏，并弹出“系统繁">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="高QPS下自研Rpc框架性能调优">
+<meta property="og:description" content="高 QPS 下自研 Rpc 框架性能调优问题背景公司是基于医疗互联网的 Saas 模式，给几千家医院提供互联网医院服务。突然 5.23 浙江省中乌梅汤 2.0 爆红全网。
+排查回顾
+现象
+高峰时期，用户进入公众号首页出现白屏，并弹出“系统繁">
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Simon's wooden house" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Simon's wooden house" type="application/rss+xml">
+</head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://ttsths.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://ttsths.github.io">
+        <h1 class="site-title">Simon&#39;s wooden house</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/categories" class="menu purple-link">
+        分类
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">高QPS下自研Rpc框架性能调优</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2024-05-30</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/">
+              性能调优
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="高-QPS-下自研-Rpc-框架性能调优"><a href="#高-QPS-下自研-Rpc-框架性能调优" class="headerlink" title="高 QPS 下自研 Rpc 框架性能调优"></a><strong>高 QPS 下自研 Rpc 框架性能调优</strong></h1><h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a><strong>问题背景</strong></h2><p>公司是基于医疗互联网的 Saas 模式，给几千家医院提供互联网医院服务。突然 5.23 浙江省中乌梅汤 2.0 爆红全网。</p>
+<h2 id="排查回顾"><a href="#排查回顾" class="headerlink" title="排查回顾"></a><strong>排查回顾</strong></h2><ul>
+<li><p><strong>现象</strong></p>
+<p>高峰时期，用户进入公众号首页出现白屏，并弹出“系统繁忙”。</p>
+</li>
+<li><p><strong>救火</strong></p>
+<p>查看阿里云 waf 域名 QPS 达到 15000&#x2F;s,在网关服务开启了限流、调整 Tomcat 线程数至 2000 并紧急增加了机器。</p>
+</li>
+<li><p><strong>治理</strong></p>
+<p>后续发现流量在持续上涨，对便捷购药功能链路上的流量进行打标，对服务部署省中集群，防止对其他医院产生影响。</p>
+</li>
+<li><p><strong>排查</strong></p>
+<p>在后续放量的过程中发现，当 waf qps 达到 19000&#x2F;s 时，底层的账户(account)服务和公共基础服务(basic)的耗时会出现陡增，并出现大量超时的情况。</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611105007136.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611105007136.png"  lazyload></a></p>
+<p>阿里云 waf 域名流量监控</p>
+<p>排查服务监控发现服务 CPU 和系统 CPU 没有打满的情况，但是数据库连接数和线程数有明细的波动</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611104141499.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611104141499.png"  lazyload></a></p>
+<p>account 服务监控</p>
+<p>排查 account 服务底层获取当前用户接口，此时 account.current 接口 rpc 调用次数翻了 3 倍，单机 QPS 仅 300&#x2F;s。耗时由 20ms 增加到了 7000ms 甚至到 15000ms</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgaccount%E9%AB%98%E5%B3%B0%E6%9C%9Fcurrent%E8%80%97%E6%97%B6%E6%83%85%E5%86%B5.jpg"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgaccount%E9%AB%98%E5%B3%B0%E6%9C%9Fcurrent%E8%80%97%E6%97%B6%E6%83%85%E5%86%B5.jpg"  lazyload></a></p>
+<p>account.current rpc 接口监控</p>
+<p>第一反应是数据库影响了，排查阿里云 RDS 监控</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611105627559.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611105627559.png"  lazyload></a></p>
+<p>阿里云 RDS 监控</p>
+<p>CPU 有波动但是没有打满，慢查诊断正常，基本排除是数据库影响。</p>
+<p>走查 current 接口的代码，发现有 redis 连接操作，读取数据库操作，本地缓存操作。</p>
+<p>排查 redis 监控</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611110307985.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611110307985.png"  lazyload></a></p>
+<p>阿里云 redis 监控</p>
+<p>CPU，连接数，大 key 诊断并无明显异常。</p>
+<ul>
+<li>发现 account 服务省中集群机器数量只有 3 台，尝试增加三台机器，并没有效果;</li>
+<li>对 current 接口进行压测，并不能复现线上的情况，排查陷入了僵局</li>
+</ul>
+<p>因为线上的情况比测试环境要复杂，经过团队讨论，决定进行仿真情况进行链路压测。</p>
+<p>在运维的帮助下，我们部署了 weixin 网关服务，account 账户服务，basic 基础服务，对 account.current 进行了压测，成功复现。</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611111323528.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611111323528.png"  lazyload></a></p>
+<p>account 并发 1000 下的压测结果</p>
+<p>在之前的排查结果下，我们将目标聚焦下网关服务身上，进行了一下尝试</p>
+<ul>
+<li>调整 tomcat 线程数将 2000 的 tomcat 线程数调整至 500，发现平均耗时减半</li>
+<li>调整系统 TCP 参数<code>wmen</code>、<code>rmen</code>、<code>tcpmen</code>，文件句柄参数<code>fs.file-nr</code>、<code>fs.file-max</code>发现并无效果</li>
+</ul>
+<p>梳理请求链路</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgaccount.current%E8%AF%B7%E6%B1%82%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgaccount.current%E8%AF%B7%E6%B1%82%E6%97%B6%E5%BA%8F%E5%9B%BE.jpg"  lazyload></a></p>
+<p>account#current 方法时序图</p>
+<p>使用 arthas 抓取压测链路上的耗时，发现服务主要耗时在第 4 步，account 服务返回结果时候异常。排查了自研的 RPC 框架，无法确定此时的卡点是 netty 的在 client 还是 server 端。</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgngari-rpc%E6%A1%86%E6%9E%B6.jpg"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgngari-rpc%E6%A1%86%E6%9E%B6.jpg"  lazyload></a></p>
+<p>自研 RPC 框架</p>
+<p>走查代码，进行了框架层面的测试发现有脱敏 filter，去除后发现耗时从 15s 下降到 2 秒，看到了希望。我们尝试用 arthas 抓取脱敏方法的耗时只有 100ms 这和我们的期望有所偏差。</p>
+<p>排查服务线程情况，发现 account 有 netty 的一个 NioEventLoop 线程经常被阻塞，而其他的 NioEventLoop 线程却是空闲状态。怀疑是这个线程导致了耗时，尝试调整 WorkGroop 线程数，发现并没有效果。</p>
+<p>通过对接口的深入分析，发现业务中对脱敏 filter 会执行多次操作，一次脱敏 5ms 左右更关键的信息是执行脱敏的接口是 BoosGrop 线程，此线程会跟请求端绑定，在 IP 不变的情况下次线程固定不变，在高并发的情况下后续的线程就会阻塞。</p>
+<p><strong>终章</strong></p>
+<p>我们将脱敏的执行线程调整至 WorkGroup，见证奇迹！</p>
+<p>在 2000 并发的情况下进行接口压测，99%的请求可以在 2s 内返回，根据单接口的耗时预估，这些请求主要是积压在 weixin 网关服务，符合预期。</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611114505313.png"><img   src="/images/loading.svg" data-src="https://raw.githubusercontent.com/ttsths/blogimg/main/imgimage-20240611114505313.png"  lazyload></a></p>
+<h2 id="回顾与反思"><a href="#回顾与反思" class="headerlink" title="回顾与反思"></a><strong>回顾与反思</strong></h2><p>由于是突发的大流量的情况，且线上情况复杂，对排查造成了一些误导导致排查陷入了僵局。还是需要步步为营，梳理排查手册，增加大流量应急预案。</p>
+<p>对于底层框架层的代码必须做好细致入微的考量，且进行严格的压测，包括链路压测。才可以推送给业务部门，埋下的隐患在时机成熟的时候将带来致命的打击</p>
+</li>
+</ul>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E9%AB%98-QPS-%E4%B8%8B%E8%87%AA%E7%A0%94-Rpc-%E6%A1%86%E6%9E%B6%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98"><span class="top-box-text">高 QPS 下自研 Rpc 框架性能调优</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF"><span class="top-box-text">问题背景</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%8E%92%E6%9F%A5%E5%9B%9E%E9%A1%BE"><span class="top-box-text">排查回顾</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%9B%9E%E9%A1%BE%E4%B8%8E%E5%8F%8D%E6%80%9D"><span class="top-box-text">回顾与反思</span></a></li></ol></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/nas-2023/">
+          <h3 class="post-title">
+            下一篇：NAS再入土
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+    <div id="gitalk-container"></div>
+
+
+
+    <link rel="stylesheet" href="/style/gitalk.min.css"/>
+    <script src="/js/gitalk.min.js"></script>
+    <script>
+        const config = {"clientId":"82abd3d3342d352924ed","clientSecret":"95daa55e9ad58a03856380524fdccd29f8913b57","repository":"blogimg","owner":"ttsths","createIssueManually":true};
+        const gitalk = new Gitalk({
+            clientID: config.clientId,
+            clientSecret: config.clientSecret,
+            repo: config.repository,
+            owner: config.owner,
+            admin: [config.owner],
+            id: location.pathname.slice(1, location.pathname.lastIndexOf('/')).substring(0, 49),       // Ensure uniqueness and length less than 50
+            distractionFreeMode: false,  // Facebook-like distraction free mode
+            createIssueManually: config.createIssueManually ? true : false
+        });
+
+        gitalk.render('gitalk-container')
+
+    </script>
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/ttsths" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJMR7HEFGP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LJMR7HEFGP');
+    </script>
+
+
+    <script async src="https://hm.baidu.com/hm.js?2c993bc011b852c2cce0cf9087d6bbe1"></script>
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
+</html>
+
