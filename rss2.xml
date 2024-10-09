@@ -94,33 +94,6 @@
     </item>
     
     <item>
-      <title>个人博客最优实践</title>
-      <link>https://ttsths.github.io/hexo-blog-CI/</link>
-      <guid>https://ttsths.github.io/hexo-blog-CI/</guid>
-      <pubDate>Sun, 24 Sep 2023 16:00:00 GMT</pubDate>
-      
-        
-        
-          
-          
-      <description>&lt;p&gt;之前使用 hexo 在本机做记录，deploy 到 github page 的方式，但是发现这样不能做云存储，不是随时随地（PS:其实是没有这个习惯）。偶然间看了 V2EX 上有关于博客最佳实践的讨论，看到了 Elog 这个开源的框架，觉得 Notion+Hexo+Action + Github Page</description>
-          
-        
-      
-      
-      
-      
-      <category domain="https://ttsths.github.io/categories/blog/">blog</category>
-      
-      
-      <category domain="https://ttsths.github.io/tags/blog/">blog</category>
-      
-      
-      <comments>https://ttsths.github.io/hexo-blog-CI/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>kubernetes原理与尝试</title>
       <link>https://ttsths.github.io/k8s-theory-try/</link>
       <guid>https://ttsths.github.io/k8s-theory-try/</guid>
